@@ -5,11 +5,21 @@ Console.WriteLine();
 string path = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory) + "/Input.txt";
 string[] lines = File.ReadAllLines(path);
 
-Console.WriteLine("Sum of priorities: " + part1(lines));
+Console.WriteLine("Start of packet marker detected at index: " + part1(lines, 4));
 Console.WriteLine();
-//Console.WriteLine("Sum of priorities for the three Elf groups: " + part2(lines));
+Console.WriteLine("Start of message marker detected at index: " + part1(lines, 14));
 
-static int part1(string[] lines)
+static int part1(string[] lines, int size)
 {
-    return 0;
+    int index = 0;
+    for(int i = size; i < lines[0].Length; i++)
+    {
+        var sequence = lines[0].Skip(i - size).Take(size).ToList();
+        if(sequence.Distinct().Count() == size)
+        {
+            index = i;
+            break;
+        }
+    }
+    return index;
 }
