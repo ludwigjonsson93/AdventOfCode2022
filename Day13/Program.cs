@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World! Welcome to Day 12 of Advent Of Code");
+Console.WriteLine("Hello, World! Welcome to Day 13 of Advent Of Code");
 Console.WriteLine();
 
 string path = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory) + "/Input.txt";
